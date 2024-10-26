@@ -20,4 +20,12 @@ export interface Course {
   title: string;
   description: string;
   modules: Module[];
+  imageUrl: string;
+}
+
+export interface CourseDetails {
+  detailedDescription?: string;
+  instructor?: string;
+  duration?: string;
+  modules: Module[];
 }

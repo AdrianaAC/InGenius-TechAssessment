@@ -16,7 +16,7 @@ const LessonDetail: React.FC = () => {
       const courses = await fetchCourses();
       
       // Safely handle undefined courseId, moduleId, and lessonId
-      const course = courses.find((c) => c.id === parseInt(courseId || '0'));
+      const course = courses.find((c: Course) => c.id === parseInt(courseId || '0'));
       
       if (course) {
         const module = course.modules[parseInt(moduleId || '0')];

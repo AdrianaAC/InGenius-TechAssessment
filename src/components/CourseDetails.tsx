@@ -1,17 +1,19 @@
 // src/components/CourseDetail.tsx
-import React from 'react';
-import { useParams, Link } from 'react-router-dom';
-import { Course } from '../types';
-import { fetchCourses } from '../api';
+import React from "react";
+import { useParams, Link } from "react-router-dom";
+import { Course } from "../types";
+import { fetchCourses } from "../api";
 
 const CourseDetail: React.FC = () => {
-  const { courseId } = useParams<{ courseId: string }>(); 
+  const { courseId } = useParams<{ courseId: string }>();
   const [course, setCourse] = React.useState<Course | null>(null);
 
   React.useEffect(() => {
     const loadCourse = async () => {
       const courses = await fetchCourses();
-      const selectedCourse = courses.find((c) => c.id === parseInt(courseId || '0')); 
+      const selectedCourse = courses.find(
+        (c: Course) => c.id === parseInt(courseId || "0")
+      );
       setCourse(selectedCourse || null);
     };
     loadCourse();
@@ -32,7 +34,9 @@ const CourseDetail: React.FC = () => {
             <ul>
               {module.lessons.map((lesson, index) => (
                 <li key={index}>
-                  <Link to={`/courses/${course.id}/modules/${idx}/lessons/${index}`}>
+                  <Link
+                    to={`/courses/${course.id}/modules/${idx}/lessons/${index}`}
+                  >
                     {lesson.title}
                   </Link>
                 </li>
