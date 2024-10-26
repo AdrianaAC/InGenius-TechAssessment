@@ -2,13 +2,15 @@ import React, { useEffect, useState } from "react";
 import { fetchCourses, fetchCourseDetails } from "../api"; // Import the fetchCourseDetails function
 import SearchBar from "./SearchBar";
 import { Course, CourseDetails } from "../types";
-import './CourseList.css'; // Import the CSS file for styling
+import "./CourseList.css"; // Import the CSS file for styling
 import { Link } from "react-router-dom";
 
 const CourseList: React.FC = () => {
   const [courses, setCourses] = useState<Course[]>([]);
   const [filteredCourses, setFilteredCourses] = useState<Course[]>([]);
-  const [courseDetails, setCourseDetails] = useState<{ [key: number]: CourseDetails }>({});
+  const [courseDetails, setCourseDetails] = useState<{
+    [key: number]: CourseDetails;
+  }>({});
 
   useEffect(() => {
     const loadCourses = async () => {
@@ -36,14 +38,22 @@ const CourseList: React.FC = () => {
   const handleCardClick = async (id: number) => {
     const card = document.getElementById(`course-card-${id}`);
     if (card) {
-      card.classList.toggle('flipped');
+      card.classList.toggle("flipped");
       if (!courseDetails[id]) {
         try {
           const details = await fetchCourseDetails(id);
           console.log("Fetched course details for course ID", id, ":", details);
-          setCourseDetails(prevDetails => ({ ...prevDetails, [id]: details }));
+          setCourseDetails((prevDetails) => ({
+            ...prevDetails,
+            [id]: details,
+          }));
         } catch (error) {
-          console.error("Error fetching course details for course ID", id, ":", error);
+          console.error(
+            "Error fetching course details for course ID",
+            id,
+            ":",
+            error
+          );
         }
       }
     }
@@ -63,7 +73,11 @@ const CourseList: React.FC = () => {
           >
             <div className="course-card-inner">
               <div className="course-card-front">
-                <img src={course.imageUrl} alt={course.title} className="course-image" />
+                <img
+                  src={course.imageUrl}
+                  alt={course.title}
+                  className="course-image"
+                />
                 <h2>{course.title}</h2>
                 <p>{course.description}</p>
               </div>
@@ -81,7 +95,9 @@ const CourseList: React.FC = () => {
                             <ul>
                               {module.lessons.map((lesson, index) => (
                                 <li key={index}>
-                                  <Link to={`/courses/${course.id}/modules/${idx}/lessons/${index}`}>
+                                  <Link
+                                    to={`/courses/${course.id}/modules/${idx}/lessons/${index}`}
+                                  >
                                     {lesson.title}
                                   </Link>
                                 </li>
@@ -93,7 +109,6 @@ const CourseList: React.FC = () => {
                         <p>No modules available</p>
                       )}
                     </ul>
-                    <Link to="/">Back to Course List</Link>
                   </div>
                 ) : (
                   <p>Loading details...</p>
