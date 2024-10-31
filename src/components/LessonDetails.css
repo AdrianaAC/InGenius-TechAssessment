@@ -1,0 +1,123 @@
+/* Centering the lesson details card on the page */
+.page-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f9;
+}
+
+/* Styling the main container to match the back card look */
+.lesson-container {
+  width: 60%;
+  max-width: 800px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px; /* Match the border radius of the card */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Match card shadow */
+  font-family: Arial, sans-serif;
+  color: #6e6e6e; /* Use dark grey for text */
+  overflow-y: auto;
+}
+
+.topic-list li {
+  margin-bottom: 4px;
+  color: #888888;
+}
+
+/* Content text styling */
+.content-section p {
+  font-size: 0.9em;
+  line-height: 1.6;
+  margin-top: 15px;
+  color: #6e6e6e;
+}
+
+/* Flex container for buttons to align them on the same line */
+.buttonContainer {
+  display: flex;
+  justify-content: center; /* Center the buttons */
+  margin-top: 20px;
+}
+
+.lessonContent p {
+  font-size: 12px;
+  padding-left: 20px;
+  color: #888888; /* Medium grey text */
+  margin-bottom: 25px;
+}
+
+.lessonTopics {
+  color: #888888;
+  text-decoration: none;
+  font-weight: normal;
+  line-height: 1.2;
+  font-size: 12px;
+}
+
+/* Styling each button */
+.action-button {
+  background-color: #2f3d87;
+  color: #fff;
+  border: none;
+  width: 200px;
+  font-size: 12px;
+  padding: 10px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+  text-align: center;
+}
+
+.action-button a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: normal;
+}
+
+.action-button:hover {
+  background-color: #1d2a6d;
+}
+
+/* Description styling to match the card text */
+.lessonDescription {
+  font-size: 0.7em;
+  color: #888888;
+  margin-bottom: 30px;
+  text-align: center;
+  line-height: 0;
+}
+
+/* Title styling to align with card style */
+.lessonTitle {
+  color: #116dff;
+  font-size: 1.2em;
+  font-weight: 700;
+  text-align: center;
+}
+
+/* Topic list styling to match list in the back card */
+.topicList {
+  text-align: left; /* Center-align the title and description */
+  list-style-type: upper-alpha;
+  font-size: 0.9em;
+  margin-bottom: 20px;
+  margin-top: -10px;
+}
+
+/* Section title styling for consistency */
+.section-title {
+  font-size: 1em;
+  color: #6e6e6e;
+  list-style-type: none;
+  list-style: none;
+  margin-bottom: -10px;
+  text-align: left;
+  font-weight: 700;
+}
+
+li::marker {
+  color: #6e6e6e;
+  font-weight: 700;
+  padding-left: -10px;
+}
