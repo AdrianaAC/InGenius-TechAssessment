@@ -16,7 +16,7 @@ const LessonDetail: React.FC = () => {
     const loadLesson = async () => {
       const courses = await fetchCourses();
 
-      // Safely handle undefined courseId, moduleId, and lessonId
+   
       const course = courses.find(
         (c: Course) => c.id === parseInt(courseId || "0")
       );

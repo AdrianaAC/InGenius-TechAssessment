@@ -1,7 +1,10 @@
-// src/components/CourseCard.tsx
 import React from "react";
 import { Link } from "react-router-dom";
+import "./CourseCard.css";
 
+/**
+ * Props for the CourseCard component.
+ */
 interface CourseCardProps {
   id: string;
   title: string;
@@ -9,6 +12,11 @@ interface CourseCardProps {
   imageUrl: string;
 }
 
+/**
+ * CourseCard component displays a card with course information.
+ * @param {CourseCardProps} props - The props for the component.
+ * @returns {JSX.Element} The rendered CourseCard component.
+ */
 const CourseCard: React.FC<CourseCardProps> = ({
   id,
   title,

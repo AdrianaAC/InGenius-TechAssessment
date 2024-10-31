@@ -46,7 +46,7 @@ const CourseList: React.FC = () => {
           console.log("Fetched course details for course ID", id, ":", details);
           setCourseDetails((prevDetails) => ({
             ...prevDetails,
-            [id]: details,
+            [id]: details as CourseDetails,
           }));
         } catch (error) {
           console.error(
@@ -77,7 +77,7 @@ const CourseList: React.FC = () => {
                 <img
                   src={course.imageUrl}
                   alt={course.title}
-                  className="course-image"
+                  className="courseImg"
                 />
                 <h2>{course.title}</h2>
                 <p>{course.description}</p>
@@ -95,7 +95,7 @@ const CourseList: React.FC = () => {
                               {module.lessons.map((lesson, index) => (
                                 <li className="lessonsItemLink" key={index}>
                                   <Link
-                                  className="lessonsLink"
+                                    className="lessonsLink"
                                     to={`/courses/${course.id}/modules/${idx}/lessons/${index}`}
                                   >
                                     {lesson.title}
@@ -107,7 +107,6 @@ const CourseList: React.FC = () => {
                         </ul>
                       </div>
                     ))}
-
                   </div>
                 ) : (
                   <p>Loading details...</p>

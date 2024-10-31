@@ -19,8 +19,8 @@ export interface Course {
   id: number;
   title: string;
   description: string;
-  modules: Module[];
   imageUrl: string;
+  modules: Module[];
 }
 
 export interface CourseDetails {

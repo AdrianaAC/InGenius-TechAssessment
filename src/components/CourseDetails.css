@@ -1,0 +1,41 @@
+.course-detail {
+  padding: 20px;
+}
+
+.course-detail h2 {
+  font-size: 2em;
+  margin-bottom: 10px;
+  color: #007bff;
+  font-weight: 700;
+}
+
+.course-detail p {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+  color: #666;
+}
+
+.course-detail h3 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  color: #007bff;
+  font-weight: 600;
+}
+
+.course-detail ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.course-detail li {
+  margin-bottom: 10px;
+}
+
+.course-detail a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.course-detail a:hover {
+  text-decoration: underline;
+}

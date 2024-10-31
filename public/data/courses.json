@@ -65,7 +65,7 @@
   {
     "id": 2,
     "title": "JavaScript Programming",
-    "imageUrl": "assets/javascript.png",
+    "imageUrl": "assets/javascript-programming-language-icon.svg",
     "description": "Dive into JavaScript programming and learn to create interactive web applications.",
     "modules": [
       {
