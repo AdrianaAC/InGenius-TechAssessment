@@ -4,6 +4,7 @@ import { useParams, Link } from "react-router-dom";
 import { Course } from "../types";
 import { fetchCourses } from "../api";
 
+
 const CourseDetail: React.FC = () => {
   const { courseId } = useParams<{ courseId: string }>();
   const [course, setCourse] = React.useState<Course | null>(null);

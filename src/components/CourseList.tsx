@@ -1,8 +1,9 @@
+// src/components/CourseList.tsx
 import React, { useEffect, useState } from "react";
-import { fetchCourses, fetchCourseDetails } from "../api"; // Import the fetchCourseDetails function
+import { fetchCourses, fetchCourseDetails } from "../api";
 import SearchBar from "./SearchBar";
 import { Course, CourseDetails } from "../types";
-import "./CourseList.css"; // Import the CSS file for styling
+import "./CourseList.css";
 import { Link } from "react-router-dom";
 
 const CourseList: React.FC = () => {
@@ -82,20 +83,19 @@ const CourseList: React.FC = () => {
                 <p>{course.description}</p>
               </div>
               <div className="course-card-back">
-                <h2>{course.title}</h2>
-                <p>{course.description}</p>
                 {courseDetails[course.id] ? (
-                  <div>
-                    <h3>Modules</h3>
-                    <ul>
-                      {courseDetails[course.id].modules ? (
-                        courseDetails[course.id].modules.map((module, idx) => (
+                  <div className="content">
+                    <h3 className="moduleTitle">Modules</h3>
+                    {courseDetails[course.id].modules.map((module, idx) => (
+                      <div className="cardBackContent">
+                        <h4 className="lessonsTitle">{module.title}</h4>
+                        <ul className="lessonsItems">
                           <li key={idx}>
-                            <h4>{module.title}</h4>
                             <ul>
                               {module.lessons.map((lesson, index) => (
-                                <li key={index}>
+                                <li className="lessonsItemLink" key={index}>
                                   <Link
+                                  className="lessonsLink"
                                     to={`/courses/${course.id}/modules/${idx}/lessons/${index}`}
                                   >
                                     {lesson.title}
@@ -104,11 +104,10 @@ const CourseList: React.FC = () => {
                               ))}
                             </ul>
                           </li>
-                        ))
-                      ) : (
-                        <p>No modules available</p>
-                      )}
-                    </ul>
+                        </ul>
+                      </div>
+                    ))}
+
                   </div>
                 ) : (
                   <p>Loading details...</p>

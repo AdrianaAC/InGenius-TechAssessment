@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 import { Course } from "./types";
-import coursesData from "./data/courses.json";
+import coursesData from "../public/data/courses.json";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import CourseList from "./components/CourseList";
 import CourseDetail from "./components/CourseDetails";

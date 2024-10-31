@@ -1,6 +1,7 @@
 [
   {
     "id": 1,
+    "imageUrl": "assets/webDev.jpg",
     "title": "Introduction to Web Development",
     "description": "Learn the fundamentals of web development, covering HTML, CSS, and JavaScript.",
     "modules": [
@@ -64,6 +65,7 @@
   {
     "id": 2,
     "title": "JavaScript Programming",
+    "imageUrl": "assets/javascript.png",
     "description": "Dive into JavaScript programming and learn to create interactive web applications.",
     "modules": [
       {
@@ -91,6 +93,7 @@
   {
     "id": 3,
     "title": "React Fundamentals",
+    "imageUrl": "/assets/react-1-logo.svg",
     "description": "Learn the basics of React, a popular JavaScript library for building user interfaces.",
     "modules": [
       {
@@ -118,6 +121,7 @@
   {
     "id": 4,
     "title": "Python for Beginners",
+    "imageUrl": "assets/python.jpg",
     "description": "Start your programming journey with Python, a versatile and beginner-friendly language.",
     "modules": [
       {
@@ -145,6 +149,7 @@
   {
     "id": 5,
     "title": "Data Science Essentials",
+    "imageUrl": "assets/dataScience.png",
     "description": "Explore the fundamentals of data science, including statistics and machine learning.",
     "modules": [
       {
